@@ -1,0 +1,15 @@
+[Unit]
+Description=DemoPlugin Service
+After=network.target systemd-sysctl.service systemd-modules-load.service
+
+[Service]
+User=root
+WorkingDirectory=/usr/local/EdgeSense/DemoPlugin
+Restart=no
+Type=simple
+ExecStart=/usr/local/EdgeSense/DemoPlugin/advsc
+RemainAfterExit=true
+StandardOutput=null
+
+[Install]
+WantedBy=multi-user.target
